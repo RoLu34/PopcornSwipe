@@ -10,14 +10,17 @@ const MovieCard = () => {
         return () => window.removeEventListener("mouseup", handleMouseUp);
     }, []);
 
-    const handleMouseDown = (e) => {
+    // When user click on the card -> store mouse x position
+    const handleMouseDownOnCard = (e) => {
         isDraggingRef.current = true;
         lastMouseXPosRef.current = e.clientX;
     }
     
     const handleMouseUp = (e) => {
+        // If not dragging, do nothing
         if(!isDraggingRef.current) return;
 
+        // Check if the mouse move enough before counting as a swipe 
         if((e.clientX - lastMouseXPosRef.current) > 80) {
             console.log("Swiped right");
         }
@@ -26,6 +29,7 @@ const MovieCard = () => {
             console.log("Swiped left");
         }
         
+        // reset values
         isDraggingRef.current = false;        
         lastMouseXPosRef.current = 0;
     }
@@ -33,7 +37,7 @@ const MovieCard = () => {
     return (
             <div 
                 className="card unselectable" 
-                onMouseDown={handleMouseDown}
+                onMouseDown={handleMouseDownOnCard}
             >
                 <p>Swipe me !</p>
             </div>
