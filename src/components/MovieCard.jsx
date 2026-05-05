@@ -36,7 +36,7 @@ const MovieCard = () => {
 
     return (
             <div 
-                className="card unselectable" 
+                className="movie-card unselectable" 
                 onMouseDown={handleMouseDownOnCard}
             >
                 <p>Swipe me !</p>

@@ -1,0 +1,18 @@
+.navigation{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation a {
+    font-family: var(--heading);
+    font-weight: 500;
+    background-color: var(--primary);
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation a:hover {
+    background-color: var(--accent);
+}

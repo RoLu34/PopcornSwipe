@@ -1,11 +1,11 @@
-import MovieCard from "../components/MovieCard";
+import MovieCardContainer from "../components/MovieCardContainer";
 
 const Home = () => {
     return (
         <div>
             <h1>Welcome to PopcornSwipe !!!</h1>
 
-            <MovieCard />
+            <MovieCardContainer />
         </div>  
     )
 }
